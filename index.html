@@ -21,33 +21,39 @@
     </div>
 </nav>
 
+<script id="tmpl-sites" type="text/x-jsrender">
+    {{for sites}}
+        <li>
+            <span>{{:name}}</span> - <a href="{{:url}}">{{:url}}</a>
+        </li>
+    {{/for}}
+</script>
+
 <div class="container-fluid">
-    <ul id="sites"></ul>
+    <h4>それなりに活動してるサイト</h4>
+    <ul id="active-sites"></ul>
+    <h4>アカウント作ったけど放置しているサイト</h4>
+    <ul id="inactive-sites"></ul>
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//www.jsviews.com/download/jsrender.min.js"></script>
 <script>
 $(function(){
-    var sites = [
-        ['はてなブログ', 'http://ngyuki.hatenablog.com/'],
-        ['Twitter', 'https://twitter.com/ngyuki'],
-        ['GitHub', 'https://github.com/ngyuki'],
-        ['Qiita', 'http://qiita.com/ngyuki'],
-        ['QA@IT', 'http://qa.atmarkit.co.jp/users/ngyuki'],
-        ['teratail', 'https://teratail.com/users/ngyuki'],
-        ['Facebook', 'https://www.facebook.com/ngyuki.jp'],
-        ['LinkedIn', 'https://www.linkedin.com/in/ngyuki'],
-    ];
-
-    var elems = $.map(sites, function(site){
-        return $('<li>').append(
-            $('<span>').text(site[0] + " - "),
-            $('<a>').attr('href', site[1]).text(site[1]).attr('target', '_blank')
-        );
-    });
-
-    $('#sites').append(elems);
+    $('#active-sites').append($('#tmpl-sites').render({sites: [
+        { name:'はてなブログ', url:'http://ngyuki.hatenablog.com/'},
+        { name:'Twitter', url:'https://twitter.com/ngyuki'},
+        { name:'GitHub', url:'https://github.com/ngyuki'},
+        { name:'Qiita', url:'http://qiita.com/ngyuki'},
+        { name:'teratail', url:'https://teratail.com/users/ngyuki'},
+        { name:'QA@IT', url:'http://qa.atmarkit.co.jp/users/ngyuki'},
+    ]}));
+    $('#inactive-sites').append($('#tmpl-sites').render({sites: [
+        { name:'Facebook', url:'https://www.facebook.com/ngyuki.jp'},
+        { name:'LinkedIn', url:'https://www.linkedin.com/in/ngyuki'},
+        { name:'Tumblr', url:'http://ngyuki.tumblr.com/'},
+    ]}));
 })
 </script>
 
