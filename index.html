@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ngyuki's site</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">ngyuki's site</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a href="#/">home</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <ul id="sites"></ul>
+</div>
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    var sites = [
+        ['はてなブログ', 'http://ngyuki.hatenablog.com/'],
+        ['Twitter', 'https://twitter.com/ngyuki'],
+        ['GitHub', 'https://github.com/ngyuki'],
+        ['Qiita', 'http://qiita.com/ngyuki'],
+        ['QA@IT', 'http://qa.atmarkit.co.jp/users/ngyuki'],
+        ['teratail', 'https://teratail.com/users/ngyuki'],
+        ['Facebook', 'https://www.facebook.com/ngyuki.jp'],
+        ['LinkedIn', 'https://www.linkedin.com/in/ngyuki'],
+    ];
+
+    var elems = $.map(sites, function(site){
+        return $('<li>').append(
+            $('<span>').text(site[0] + " - "),
+            $('<a>').attr('href', site[1]).text(site[1]).attr('target', '_blank')
+        );
+    });
+
+    $('#sites').append(elems);
+})
+</script>
+
+</body>
+</html>
