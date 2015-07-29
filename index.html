@@ -41,13 +41,16 @@
 </script>
 
 <div class="container-fluid">
-    <h4>それなりに活動してるサイト</h4>
-    <ul id="active-sites"></ul>
-    <hr>
-    <h4>アカウント作ったけど放置しているサイト</h4>
-    <ul id="inactive-sites"></ul>
-    <hr>
-    <div class="fb-comments" data-href="http://ngyuki.jp/" data-numposts="5"></div>
+    <div class="row">
+        <ul id="sites"></ul>
+        <hr>
+        <div class="col-md-6">
+            <div class="fb-comments" data-href="http://ngyuki.jp/" data-numposts="5"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -59,7 +62,7 @@
 
 <script>
 $(function(){
-    $('#active-sites').append($('#tmpl-sites').render({sites: [
+    $('#sites').append($('#tmpl-sites').render({sites: [
         { name:'はてなブログ', url:'http://ngyuki.hatenablog.com/'},
         { name:'はてなブックマーク', url:'http://b.hatena.ne.jp/ngyuki/'},
         { name:'Twitter', url:'https://twitter.com/ngyuki'},
@@ -67,14 +70,28 @@ $(function(){
         { name:'Qiita', url:'http://qiita.com/ngyuki'},
         { name:'teratail', url:'https://teratail.com/users/ngyuki'},
         { name:'QA@IT', url:'http://qa.atmarkit.co.jp/users/ngyuki'},
-    ]}));
-    $('#inactive-sites').append($('#tmpl-sites').render({sites: [
         { name:'Facebook', url:'https://www.facebook.com/ngyuki.jp'},
         { name:'LinkedIn', url:'https://www.linkedin.com/in/ngyuki'},
         { name:'Tumblr', url:'http://ngyuki.tumblr.com/'},
+        { name:'Instagram', url:'https://instagram.com/ngyuki_jp/'},
     ]}));
 })
 </script>
+
+<!-- disqus -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ngyuki-jp';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- /disqus -->
 
 </body>
 </html>
