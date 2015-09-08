@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p ~/.ssh
+curl -fsSL https://github.com/ngyuki.keys | awk 1 >> ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
