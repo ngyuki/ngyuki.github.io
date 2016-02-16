@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say voice="alice" language="ja-jp">こんにちわ。わたしは Twilio の alice です。よろしく。特に用事はないので切ります。さようなら。</Say>
+</Response>
