@@ -3,86 +3,30 @@
 <head>
     <meta charset="utf-8">
     <title>ngyuki.jp</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/favicon.jpg">
 </head>
 <body>
-
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">ngyuki.jp</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <!-- <li><a href="#/">home</a></li> -->
-            <ul>
-        </div>
-    </div>
-</nav>
-
-<script id="tmpl-sites" type="text/x-jsrender">
-    {{for sites}}
-        <li>
-            <span>{{:name}}</span> - <a href="{{:url}}">{{:url}}</a>
-        </li>
-    {{/for}}
-</script>
-
-<div class="container-fluid">
-    <div class="row">
-        <ul id="sites"></ul>
-        <div class="col-md-12 images">
-            <img class="img-thumbnail" src="img/red.png" alt="red">
-            <img class="img-thumbnail" src="img/blue.png" alt="blue">
-            <img class="img-thumbnail" src="img/green.png" alt="green">
-            <img class="img-thumbnail" src="img/purple.png" alt="purple">
-            <img class="img-thumbnail" src="img/black.png" alt="black">
-        </div>
-        <div class="col-md-12 images">
-            <img class="img-circle" src="img/red.png" alt="red">
-            <img class="img-circle" src="img/blue.png" alt="blue">
-            <img class="img-circle" src="img/green.png" alt="green">
-            <img class="img-circle" src="img/purple.png" alt="purple">
-            <img class="img-circle" src="img/black.png" alt="black">
-        </div>
-        <div class="col-md-12 images">
-            <hr>
-        </div>
-        <div class="col-md-6">
-            <div class="fb-comments" data-href="http://ngyuki.jp/" data-numposts="5"></div>
-        </div>
-        <div class="col-md-6">
-            <div id="disqus_thread"></div>
-        </div>
-    </div>
-</div>
-
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<!--
-<script src="//www.jsviews.com/download/jsrender.min.js"></script>
--->
-<script src="js/jsrender.min.js"></script>
-
-<script>
-$(function(){
-    $('#sites').append($('#tmpl-sites').render({sites: [
-        { name:'はてなブログ', url:'http://ngyuki.hatenablog.com/'},
-        { name:'はてなブックマーク', url:'http://b.hatena.ne.jp/ngyuki/'},
-        { name:'Twitter', url:'https://twitter.com/ngyuki'},
-        { name:'GitHub', url:'https://github.com/ngyuki'},
-        { name:'Qiita', url:'http://qiita.com/ngyuki'},
-        { name:'teratail', url:'https://teratail.com/users/ngyuki'},
-        { name:'QA@IT', url:'http://qa.atmarkit.co.jp/users/ngyuki'},
-        { name:'Facebook', url:'https://www.facebook.com/ngyuki.jp'},
-        { name:'LinkedIn', url:'https://www.linkedin.com/in/ngyuki'},
-        { name:'Tumblr', url:'http://ngyuki.tumblr.com/'},
-        { name:'Instagram', url:'https://instagram.com/ngyuki_jp/'},
-    ]}));
-})
-</script>
-
+  <header>
+    ngyuki.jp
+  </header>
+  <main>
+      <ul>
+        <li><span>はてなブログ</span> - <a href="http://ngyuki.hatenablog.com/">http://ngyuki.hatenablog.com/</a></li>
+        <li><span>はてなブックマーク</span> - <a href="http://b.hatena.ne.jp/ngyuki/">http://b.hatena.ne.jp/ngyuki/</a></li>
+        <li><span>Twitter</span> - <a href="https://twitter.com/ngyuki">https://twitter.com/ngyuki</a></li>
+        <li><span>GitHub</span> - <a href="https://github.com/ngyuki">https://github.com/ngyuki</a></li>
+        <li><span>Qiita</span> - <a href="http://qiita.com/ngyuki">http://qiita.com/ngyuki</a></li>
+        <li><span>teratail</span> - <a href="https://teratail.com/users/ngyuki">https://teratail.com/users/ngyuki</a></li>
+        <li><span>Facebook</span> - <a href="https://www.facebook.com/ngyuki.jp">https://www.facebook.com/ngyuki.jp</a></li>
+      </ul>
+      <div class="images">
+          <img class="img-circle" src="img/red.png" alt="red">
+          <img class="img-circle" src="img/blue.png" alt="blue">
+          <img class="img-circle" src="img/green.png" alt="green">
+          <img class="img-circle" src="img/purple.png" alt="purple">
+          <img class="img-circle" src="img/black.png" alt="black">
+      </div>
+  </main>
 </body>
 </html>
